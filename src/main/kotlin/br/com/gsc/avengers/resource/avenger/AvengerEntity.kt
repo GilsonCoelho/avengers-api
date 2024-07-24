@@ -2,17 +2,14 @@ package br.com.gsc.avengers.resource.avenger
 
 import br.com.gsc.avengers.application.web.resource.request.AvengerRequest
 import br.com.gsc.avengers.domain.avenger.Avenger
-import jakarta.persistence.Column
-import jakarta.persistence.Entity
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.GenerationType
-import jakarta.persistence.Id
+import jakarta.persistence.*
 
 @Entity
+@Table(name = "avenger")
 data class AvengerEntity(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long,
+    val id: Long?,
     @Column(nullable = false)
     val nick: String,
     @Column(nullable = false)
