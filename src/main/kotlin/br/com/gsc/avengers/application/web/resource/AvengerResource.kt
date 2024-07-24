@@ -30,7 +30,7 @@ class AvengerResource (
             ResponseEntity.ok().body(it)
         }
 
-    @GetMapping("{/id}")
+    @GetMapping("/{id}/detail")
     fun getAvengersDetails(@PathVariable(value = "id") id: Long) =
         repository.getDetail(id)?.let {
             ResponseEntity.ok().body(AvengerResponse.from(it))
@@ -46,7 +46,7 @@ class AvengerResource (
                 .body(AvengerResponse.from(it))
         }
 
-    @PutMapping("{id}")
+    @PutMapping("/{id}")
     fun createAvenger(@Valid @RequestBody request: AvengerRequest, @PathVariable("id") id: Long) =
         repository.getDetail(id)?.let {
             AvengerRequest.to(it.id, request).apply {
@@ -56,7 +56,7 @@ class AvengerResource (
             }
         } ?: ResponseEntity.notFound().build<Void>()
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("/{id}")
     fun deleteAvenger(@PathVariable("id") id: Long) =
         repository.delete(id).let {
             ResponseEntity.accepted().build<Void>()
