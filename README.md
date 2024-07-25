@@ -211,7 +211,7 @@ networks:
 
 ### Script / Comandos
 
-- `docker-compose -f backend-services.yaml up -d` (deploy) / `docker-compose -f backend-services.yaml down` (undeploy) 
+- `docker-compose -f avenger-api-resources.yaml up -d` (deploy) / `docker-compose -f avenger-api-resources.yaml down` (undeploy) 
 
 - Start API 
 ```sh
