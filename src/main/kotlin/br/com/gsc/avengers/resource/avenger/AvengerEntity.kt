@@ -1,11 +1,10 @@
 package br.com.gsc.avengers.resource.avenger
 
-import br.com.gsc.avengers.application.web.resource.request.AvengerRequest
 import br.com.gsc.avengers.domain.avenger.Avenger
 import jakarta.persistence.*
 
 @Entity
-//@Table(name = "avenger")
+@Table(name="avenger")
 data class AvengerEntity(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
